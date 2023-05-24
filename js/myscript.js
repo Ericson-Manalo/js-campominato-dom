@@ -10,6 +10,7 @@ button.addEventListener('click', function(){
     //resetta la griglia
     gridElement.innerHTML = "";
 
+    //creo variabile dove metterò i numeri generato casualmente
     const bombsNumber = randomNumber(1, 100, 16);
     console.log(bombsNumber);
 
@@ -35,15 +36,17 @@ for ( let i = 1; i < 101; i++){
     numberElement.append(i);
 
     //creo una classe per centrarla
-    numberElement.classList.add('centered-number')
+    numberElement.classList.add('centered-number');
 
     //aggiunto al click il cambio di colore delle celle
     actualCell.addEventListener('click', function(){
         console.log(i);
-        actualCell.classList.toggle('clicked');
 
-        //se clicca una delle celle in cui è presente il numero random generato dal computer allora ha perso
-
+        if(bombsNumber != numberElement){
+            actualCell.classList.toggle('clicked');
+        } else {
+            actualCell.classList.add('clicked-lost');
+        }
     });
 
     //all'interno della variabile che richiama il div con classe grid metto i nuovi elementi creati (in questo caso div con classe cell)
