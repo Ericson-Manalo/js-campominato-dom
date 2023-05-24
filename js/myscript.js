@@ -10,6 +10,9 @@ button.addEventListener('click', function(){
     //resetta la griglia
     gridElement.innerHTML = "";
 
+    const bombsNumber = randomNumber(1, 100, 16);
+    console.log(bombsNumber);
+
 
     //creazione di n. 100 celle con condizione for
 for ( let i = 1; i < 101; i++){
@@ -21,9 +24,6 @@ for ( let i = 1; i < 101; i++){
     }
 
 
-
-
-        
 
     //creo variabile in cui creerò il tagname e la classe 
     const actualCell = createElement('div', 'cell');
@@ -42,7 +42,7 @@ for ( let i = 1; i < 101; i++){
         console.log(i);
         actualCell.classList.toggle('clicked');
 
-        //se clicca una delle celle in cui presente il numero random generato dal computer allora ha perso
+        //se clicca una delle celle in cui è presente il numero random generato dal computer allora ha perso
 
     });
 
@@ -76,9 +76,6 @@ for ( let i = 1; i < 101; i++){
             }
             return numberList;
         }
-            console.log (randomNumber(1, 100, 16));
-
-
 
 });
 
