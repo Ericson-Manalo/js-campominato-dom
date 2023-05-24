@@ -21,28 +21,7 @@ for ( let i = 1; i < 101; i++){
     }
 
 
-        //creo la funzione che mi generi nuemri randomici
-        function getRandNumb (minNumb, maxNumb){
-            const randNumb = Math.floor(Math.random()* (maxNumb - minNumb) +1);
-            return randNumb;
-        }
-    
-        
-    
-        //creo la funzione che mi permetta di generare quantità di numeri randomici desiderata e non ripetuti
-        function randomNumber (minumNumb, maximNumb, elementNumb){
-            const numberList = [];
-        
-            while (numberList.length < elementNumb){
-            //richiamo la funzione dei numeri randomici creati precedentemente
-                const newRandNumb = getRandNumb (minumNumb, maximNumb);
-                if(!numberList.includes(newRandNumb)){
-                    numberList.push(newRandNumb);
-                }
-            }
-            return numberList;
-        }
-            console.log (randomNumber(1, 100, 16));
+
 
         
 
@@ -74,6 +53,32 @@ for ( let i = 1; i < 101; i++){
     actualCell.appendChild(numberElement);
 
 }
+
+
+        //creo la funzione che mi generi nuemri randomici
+        function getRandNumb (minNumb, maxNumb){
+            const randNumb = Math.floor(Math.random()* (maxNumb - minNumb) +1);
+            return randNumb;
+        }
+    
+        
+    
+        //creo la funzione che mi permetta di generare quantità di numeri randomici desiderata e non ripetuti
+        function randomNumber (minumNumb, maximNumb, elementNumb){
+            const numberList = [];
+        
+            while (numberList.length < elementNumb){
+            //richiamo la funzione dei numeri randomici creati precedentemente
+                const newRandNumb = getRandNumb (minumNumb, maximNumb);
+                if(!numberList.includes(newRandNumb)){
+                    numberList.push(newRandNumb);
+                }
+            }
+            return numberList;
+        }
+            console.log (randomNumber(1, 100, 16));
+
+
 
 });
 
