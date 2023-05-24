@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 100px;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main{
+    background-color: #7fffd4;
+    height: 700px;
+    width: 100%;
+}
+
+div.grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    height: 600px;
+    width: 600px;
+}
+
+div.grid .cell{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+}
+
+div.grid .clicked{
+    background-color: blue;
+}
+
+div.grid .centered-number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
