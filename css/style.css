@@ -39,6 +39,10 @@ div.grid .clicked{
     background-color: blue;
 }
 
+div.grid .clicked-lost{
+    background-color: red;
+}
+
 div.grid .centered-number{
     display: flex;
     justify-content: center;
