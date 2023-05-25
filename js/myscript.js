@@ -13,6 +13,8 @@ button.addEventListener('click', function(){
     //creo variabile dove metterò i numeri generato casualmente
     const bombsNumber = randomNumber(1, 100, 16);
     console.log(bombsNumber);
+    let isGameOver = false;
+    let score = 0;
 
 
     //creazione di n. 100 celle con condizione for
@@ -24,8 +26,6 @@ for ( let i = 1; i < 101; i++){
         return cellElement;
     }
 
-
-
     //creo variabile in cui creerò il tagname e la classe 
     const actualCell = createElement('div', 'cell');
 
@@ -35,18 +35,27 @@ for ( let i = 1; i < 101; i++){
     //al nuovo elemento metto dentro i numeri dell'indice che crescerà di +1 ad ogni ciclo
     numberElement.append(i);
 
+    
+
     //creo una classe per centrarla
     numberElement.classList.add('centered-number');
 
     //aggiunto al click il cambio di colore delle celle
     actualCell.addEventListener('click', function(){
-        console.log(i);
 
-        if(bombsNumber != numberElement){
-            actualCell.classList.toggle('clicked');
-        } else {
-            actualCell.classList.add('clicked-lost');
+        if(!isGameOver){
+            if(bombsNumber.includes(i)){
+                actualCell.classList.add('clicked-lost');
+                alert('Hai perso!, tentativi: ', +score);
+                isGameOver = true;
+            } else {
+                actualCell.classList.add('clicked');  
+                score ++;
+            }
+        }else{
+            alert('Hai perso!!');
         }
+
     });
 
     //all'interno della variabile che richiama il div con classe grid metto i nuovi elementi creati (in questo caso div con classe cell)
