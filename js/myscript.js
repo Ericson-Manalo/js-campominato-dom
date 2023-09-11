@@ -46,7 +46,7 @@ for ( let i = 1; i < 101; i++){
         if(!isGameOver){
             if(bombsNumber.includes(i)){
                 actualCell.classList.add('clicked-lost');
-                alert('Hai perso!, tentativi: ', +score);
+                alert('Hai perso!, tentativi: ' +score);
                 isGameOver = true;
             } else {
                 actualCell.classList.add('clicked');  
